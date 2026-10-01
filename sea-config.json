@@ -1,0 +1,4 @@
+{
+  "main": "dist/bin/agy-tools.cjs",
+  "output": "dist/sea-prep.blob"
+}

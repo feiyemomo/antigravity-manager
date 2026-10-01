@@ -1,0 +1,62 @@
+{
+  "name": "agy-tools",
+  "version": "0.1.1",
+  "description": "Antigravity API reverse proxy with multi-account management",
+  "type": "module",
+  "main": "./dist/bin/agy-tools.js",
+  "bin": {
+    "agy-tools": "dist/bin/agy-tools.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx watch src/bin/agy-tools.ts",
+    "build": "tsup",
+    "build:exe": "tsup && node --experimental-sea-config sea-config.json && powershell -Command \"Copy-Item (Get-Command node).Source -Destination dist/agy-tools.exe -Force\" && npx postject dist/agy-tools.exe NODE_SEA_BLOB dist/sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2 && powershell -Command \"Copy-Item dist/agy-tools.exe ./agy-tools.exe -Force\"",
+    "start": "node dist/bin/agy-tools.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "clean": "rm -rf dist",
+    "prepare": "npm run build"
+  },
+  "packageManager": "pnpm@10.27.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "antigravity",
+    "gemini",
+    "claude",
+    "openai",
+    "proxy",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@hono/node-server": "^1.19.7",
+    "cac": "^6.7.14",
+    "chalk": "^5.3.0",
+    "dotenv": "^17.2.3",
+    "hono": "^4.6.0",
+    "open": "^10.1.0",
+    "ora": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^4.0.16",
+    "@yao-pkg/pkg": "^6.23.0",
+    "eslint": "^9.0.0",
+    "postject": "1.0.0-alpha.6",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^4.0.16"
+  }
+}
