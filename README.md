@@ -1,9 +1,15 @@
 # Antigravity Manager
 
+<div align="center">
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/feiyemomo/antigravity-manager)](https://github.com/feiyemomo/antigravity-manager/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-lightgrey)](https://github.com/feiyemomo/antigravity-manager)
 [![Go Version](https://img.shields.io/badge/Go-1.26+-00ADD8?logo=go)](go.mod)
+
+**[English](README_EN.md) | [简体中文](README.md)**
+
+</div>
 
 高可用、高性能的 Google Antigravity (AGY) 多账户无缝原子切换、实时配额监控与自动化断点接力管理器。基于 **Go + Gin** 原生重构，提供单文件绿色免安装、无黑框后台运行、Windows 原生凭据管理器安全存储、IDE 实时热同步（Hot-Sync）以及与 Antigravity 原生视觉风格高度一致的现代化中英双语 Web 仪表盘。
 
