@@ -1,11 +1,11 @@
 {
-  "name": "agy-tools",
-  "version": "0.1.1",
-  "description": "Antigravity API reverse proxy with multi-account management",
+  "name": "antigravity-manager",
+  "version": "2.0.0",
+  "description": "Google Antigravity Multi-Account Manager: Native atomic switcher, live hot-sync & quota dashboard",
   "type": "module",
   "main": "./dist/bin/agy-tools.js",
   "bin": {
-    "agy-tools": "dist/bin/agy-tools.js"
+    "antigravity-manager": "dist/bin/agy-tools.js"
   },
   "files": [
     "dist",
@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "tsx watch src/bin/agy-tools.ts",
     "build": "tsup",
-    "build:exe": "tsup && node --experimental-sea-config sea-config.json && powershell -Command \"Copy-Item (Get-Command node).Source -Destination dist/agy-tools.exe -Force\" && npx postject dist/agy-tools.exe NODE_SEA_BLOB dist/sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2 && powershell -Command \"Copy-Item dist/agy-tools.exe ./agy-tools.exe -Force\"",
+    "build:go": "go build -ldflags=\"-H windowsgui -s -w\" -o Antigravity-Manager.exe ./cmd/agy-tools",
     "start": "node dist/bin/agy-tools.js",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --ext .ts",
@@ -34,11 +34,17 @@
     "gemini",
     "claude",
     "openai",
-    "proxy",
-    "cli"
+    "account-switcher",
+    "multi-account",
+    "quota-monitor"
   ],
-  "author": "",
+  "author": "feiyemomo <momo__1_2@outlook.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feiyemomo/antigravity-manager.git"
+  },
+  "homepage": "https://github.com/feiyemomo/antigravity-manager#readme",
   "dependencies": {
     "@hono/node-server": "^1.19.7",
     "cac": "^6.7.14",
